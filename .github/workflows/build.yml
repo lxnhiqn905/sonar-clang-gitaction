@@ -13,7 +13,7 @@ jobs:
       SONAR_SCANNER_VERSION: 4.6.1.2450 # Find the latest version in the "Linux" link on this page:
                                         # https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
       SONAR_HOST_URL: http://52.194.9.247:9000/ # ${{ secrets.SONAR_HOST_URL }} Value stored in a Github secret
-      SONARQUBE_TOKEN: sqp_7dbf1a7c20c17e99dc08c52f0a3e3c1aa8410fee # ${{ secrets.SONAR_HOST_URL }} Value stored in a Github secret
+      SONARQUBE_TOKEN: sqp_7dbf1a7c20c17e99dc08c52f0a3e3c1aa8410fee # ${{ secrets.SONARQUBE_TOKEN }} Value stored in a Github secret
     steps:
       - uses: actions/checkout@v2
         with:
