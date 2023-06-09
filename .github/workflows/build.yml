@@ -41,12 +41,14 @@ jobs:
           mkdir build
           cmake -S . -B build
           build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build build/ --config Release
+
       - name: Run tests to generate coverage statistics
         run: |
-          ./build/build/sonar_scanner_example
+          ./build/sonar_scanner_example
       - name: Collect coverage into one XML report
         run: |
           gcovr --sonarqube > coverage.xml
+
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
