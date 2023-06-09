@@ -43,7 +43,7 @@ jobs:
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ env.SONARCLOUD_TOKEN }} # Put the name of your token here
+          SONAR_TOKEN: sqp_7dbf1a7c20c17e99dc08c52f0a3e3c1aa8410fee # Put the name of your token here
           SONAR_HOST_URL: ${{ env.SONAR_HOST_URL }}
         run: |
           sonar-scanner \
