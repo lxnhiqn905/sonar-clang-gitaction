@@ -16,7 +16,6 @@ jobs:
       SONARQUBE_TOKEN: sqp_7dbf1a7c20c17e99dc08c52f0a3e3c1aa8410fee # ${{ secrets.SONARQUBE_TOKEN }} Value stored in a Github secret
       BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory
     steps:
-    steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
