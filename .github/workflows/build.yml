@@ -49,7 +49,7 @@ jobs:
           SONAR_HOST_URL: ${{ env.SONAR_HOST_URL }}
         run: |
           sonar-scanner \
-            --define sonar.host.url="${{ env.SONAR_HOST_URL }}" \
+            --define sonar.host.url="http://52.194.9.247:9000/" \
             --define sonar.cfamily.build-wrapper-output="${{ env.BUILD_WRAPPER_OUT_DIR }}" \
             --define sonar.coverageReportPaths=coverage.xml
 
