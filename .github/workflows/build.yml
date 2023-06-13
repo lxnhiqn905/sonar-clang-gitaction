@@ -36,7 +36,9 @@ jobs:
           build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build build/ --config Release
       - name: Run tests to generate coverage statistics
         run: |
-          ./build/main
+          ./build/coverage_test1
+          ./build/coverage_test2
+          ./build/coverage_test3
       - name: Collect coverage into one XML report
         run: |
           gcovr --sonarqube > coverage.xml
@@ -47,7 +49,7 @@ jobs:
           SONAR_HOST_URL: ${{ env.SONAR_HOST_URL }}
         run: |
           sonar-scanner \
-            --define sonar.host.url="http://52.194.9.247:9000/" \
+            --define sonar.host.url="${{ env.SONAR_HOST_URL }}" \
             --define sonar.cfamily.build-wrapper-output="${{ env.BUILD_WRAPPER_OUT_DIR }}" \
             --define sonar.coverageReportPaths=coverage.xml
 
